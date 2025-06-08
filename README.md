@@ -45,7 +45,7 @@ git clone https://github.com/Ghostcar5153/cinemates.git
 cd cinemates
 ```
 
-## ⚖️ Environment Variables Setup
+## 2. Environment Variables Setup
 
 To run **Cinemates** locally, you need two `.env` files — one for the backend and one for the frontend — each containing key secrets.
 
@@ -124,6 +124,7 @@ npm run dev
 ```
 
 Then visit: [http://localhost:5173](http://localhost:5173)
+Enjoy your movies!
 
 ---
 
@@ -144,6 +145,7 @@ To access the dashboard, you must:
 * 💬 In-room chat
 * 📹 WebRTC-based video/audio party support
 * 🌐 Deployments & environment-aware configs
+* 🎞️ Adding Series/Shows & Anime
 * ✨ Better UI/UX
 
 ---
