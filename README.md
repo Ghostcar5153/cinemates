@@ -45,21 +45,47 @@ git clone https://github.com/Ghostcar5153/cinemates.git
 cd cinemates
 ```
 
-### 2. Environment Variables
+## ⚖️ Environment Variables Setup
 
-Inside the `server/` folder, create a `.env` file:
+To run **Cinemates** locally, you need two `.env` files — one for the backend and one for the frontend — each containing key secrets.
+
+---
+
+### 🔑 **Server-side (.env in `server/` folder)**
 
 ```env
 MONGO_URI=your_mongo_connection_string
 JWT_SECRET=your_super_secret_key
 ```
 
-To obtain them:
+* **`MONGO_URI`**:
 
-* `MONGO_URI`: Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a free cluster.
-* `JWT_SECRET`: Generate a secure string manually or with an online tool like [RandomKeygen](https://randomkeygen.com/).
+  1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), create a free “Shared” cluster.
+  2. Define a database user and whitelist your IP.
+  3. In Cluster > Connect > “Connect your application”, copy the provided URI (e.g. `mongodb+srv://user:pass@cluster0.abcd.mongodb.net/myDB?retryWrites=true&w=majority`).
 
-**⚠️ Never share this file publicly. It's ignored in `.gitignore`.**
+* **`JWT_SECRET`**:
+  Create a strong, random secret string. Tools like [RandomKeygen](https://randomkeygen.com/) generate high-entropy keys easily.
+
+---
+
+### 🧰 **Client-side (.env in `client/` folder)**
+
+```env
+VITE_TMDB_KEY=your_tmdb_api_key
+```
+
+1. Create an account at [TMDb](https://www.themoviedb.org/).
+2. In Account > Settings > API, request a “Developer” key.
+3. Once approved, copy the API key and paste it into your `.env`.
+
+---
+
+### ⚠️ **Important Security Notes**
+
+* Both `.env` files are added to `.gitignore` — **do not commit them** into version control.
+* Your server `.env` contains sensitive information; keep it private.
+* For frontend use, exposing the TMDb key is acceptable under TMDb’s terms, but still, **protect the server key**.
 
 ---
 
